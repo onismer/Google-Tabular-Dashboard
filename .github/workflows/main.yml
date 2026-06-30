@@ -36,7 +36,7 @@ jobs:
       - name: Stage site (serve dashboard at site root)
         run: |
           mkdir -p _site
-          cp dist/pixel_program_dashboard.html _site/index.html
+          cp dist/index.html
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
