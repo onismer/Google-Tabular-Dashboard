@@ -1,7 +1,8 @@
 name: Deploy dashboard to GitHub Pages
 
-# Publishes the prebuilt single-file dashboard (index.html at the repo root)
-# to GitHub Pages. The build is self-contained, so CI only stages and deploys.
+# Prerequisite (one-time): Settings -> Pages -> Source -> "GitHub Actions".
+# This workflow then publishes the prebuilt single-file dashboard
+# (index.html at the repo root) to GitHub Pages on every push to main.
 
 on:
   push:
@@ -37,8 +38,6 @@ jobs:
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true        # auto-enable Pages if not already turned on
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
